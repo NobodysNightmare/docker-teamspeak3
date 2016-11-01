@@ -5,8 +5,7 @@ MAINTAINER BastiOfBerlin
 ENV TEAMSPEAK_URL http://dl.4players.de/ts/releases/3.0.13.4/teamspeak3-server_linux_amd64-3.0.13.4.tar.bz2
 ENV TS3_UID 1000
 
-RUN apt-get update -q \
-  && zypper -n refresh \
+RUN zypper -n refresh \
   && zypper -n install wget \
   && useradd -u ${TS3_UID} ts3 \
   && mkdir -p /home/ts3 \
